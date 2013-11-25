@@ -1,0 +1,5 @@
+<Context path='/terminology_mgmt_service' 
+									reloadable='true' 
+									docBase='/usr/local/fuzein_configuration/terminology_mgmt_service_configuration' 
+									debug='0' 
+									privileged="true" />

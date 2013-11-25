@@ -1,0 +1,105 @@
+/*
+* Document
+*/
+.fuzein_terminology_toolbar_new {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/document-new.png) !important
+}
+
+.fuzein_terminology_toolbar_save {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/filesave.png) !important
+}
+
+.fuzein_terminology_toolbar_saveas {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/filesaveas.png) !important
+}
+
+.fuzein_terminology_toolbar_delete {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/edit-delete.png) !important
+}
+
+.fuzein_terminology_toolbar_refresh_term {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/refresh.png) !important
+}
+
+.fuzein_terminology_toolbar_submit {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/mail-replied.png) !important
+}
+
+
+/*
+* View
+*/
+.fuzein_terminology_toolbar_view_document {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/kde-document-open.png) !important
+}
+
+.fuzein_terminology_toolbar_view_metadata {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/gnome-stock-about.png) !important
+}
+
+.fuzein_terminology_toolbar_view_templates {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/templates.png) !important
+}
+
+/*
+* Terminology
+*/
+.fuzein_terminology_toolbar_text {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/terminology_text.png) !important
+}
+
+.fuzein_terminology_toolbar_image {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/terminology_image.png) !important
+}
+
+.fuzein_terminology_toolbar_audio {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/terminology_audio.png) !important
+}
+
+.fuzein_terminology_toolbar_video {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/cinelerra.png) !important
+}
+
+.fuzein_terminology_toolbar_ocr {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/scanner.png) !important
+}
+
+/*
+* Transport
+*/
+.fuzein_terminology_toolbar_upload {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/document-import.png) !important
+}
+
+.fuzein_terminology_toolbar_download {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/document-export.png) !important
+}
+
+/*
+* Vetting
+*/
+.fuzein_terminology_toolbar_vetting_note {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/gnome-sticky-notes-applet.png) !important
+}
+
+.fuzein_terminology_toolbar_vetting_reject {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/dialog-error.png) !important
+}
+
+.fuzein_terminology_toolbar_publish_terminology {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/share_terminology.png) !important
+}
+
+/*
+* Community
+*/
+.fuzein_terminology_toolbar_share_terminology {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/share_terminology.png) !important
+}
+
+/*
+* Seach
+*/
+.fuzein_terminology_toolbar_search {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/24/system-search.png) !important
+}

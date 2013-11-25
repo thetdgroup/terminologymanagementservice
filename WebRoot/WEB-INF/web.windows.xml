@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <!-- Set Session Timeout (in minutes) -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  <filter>
+    <filter-name>GZIPFilter</filter-name>
+    <filter-class>com.thetdgroup.util.GZIPFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>GZIPFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>  
+  <servlet>
+    <servlet-name>TerminologyManagementService</servlet-name>
+    <servlet-class>com.thetdgroup.TerminologyManagementService</servlet-class>
+    
+    <init-param>
+      <param-name>autoCompress</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    
+    <init-param>
+      <param-name>ApplicationConfiguration</param-name>
+      <param-value>WEB-INF/classes/configuration/applications/Applications.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>AdapterConfiguration</param-name>
+      <param-value>C:\fuzein_configuration\terminology_mgmt_service_configuration\AdapterConfiguration.xml</param-value>
+    </init-param>    
+    <init-param>
+      <param-name>ServiceConfiguration</param-name>
+      <param-value>C:\fuzein_configuration\terminology_mgmt_service_configuration\ServiceConfiguration.xml</param-value>
+    </init-param>      
+    <init-param>
+      <param-name>UserToServiceConfiguration</param-name>
+      <param-value>C:\fuzein_configuration\terminology_mgmt_service_configuration\UserToServiceConfiguration.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ServiceToServiceConfiguration</param-name>
+      <param-value>C:\fuzein_configuration\terminology_mgmt_service_configuration\ServiceToServiceConfiguration.xml</param-value>
+    </init-param>    
+      
+    <!-- Service Logging -->
+    <init-param>
+      <param-name>FuzeinService-log4j-init-file</param-name>
+      <param-value>WEB-INF/classes/FuzeinService_log4j.lcf</param-value>
+    </init-param>
+    <init-param>
+      <param-name>FuzeinService-log4j-file-location</param-name>
+      <param-value>C:\fuzein_configuration\terminology_mgmt_service_configuration\logs\service_access.log</param-value>
+    </init-param>
+          
+    <init-param>
+      <param-name>SignatureFiles</param-name>
+      <param-value>C:\fuzein_configuration\customer_signature_files</param-value>
+    </init-param>   
+           
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TerminologyManagementService</servlet-name>
+    <url-pattern>/TerminologyManagementService</url-pattern>
+  </servlet-mapping>
+</web-app>
+  

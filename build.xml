@@ -1,0 +1,166 @@
+<project name="TerminologyManagementService" default="deploy" basedir=".">
+ 
+ <!-- Specify your service name and version -->
+ <property name="app.name"      value="TerminologyManagementService"/>
+ <property name="app.version"   value="1.0.0"/>
+	
+	<!-- Build Dependencies -->
+	<target name="build_dependencies">
+ 	<ant antfile="build.xml" dir="../BaseTerminologyAdapter"/>
+  <ant antfile="build.xml" dir="../TerminologyAdapter"/>
+		
+	 <copy file='../FuzeInService/jar/FuzeInService-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/FuzeInService-1.0.0.jar' overwrite='false'/>			
+ 	<copy file='../BaseTerminologyAdapter/jar/BaseTerminologyAdapter-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/BaseTerminologyAdapter-1.0.0.jar' overwrite='false'/>			
+ 	<copy file='../TerminologyAdapter/jar/TerminologyAdapter-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/TerminologyAdapter-1.0.0.jar' overwrite='false'/>			
+	</target>
+	
+ <!-- NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE -->
+ <!-- NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE -->
+	<!--   																																																																																																		-->
+	<!-- 																														ANYTHING BELOW SHOULD NOT BE CHANGE 																																		-->
+	<!--   																																																																																																		-->
+	<!-- NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE -->
+	<!-- NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE --> 
+	
+ <property name="app.path"      value="/${app.name}"/>
+	
+ <property name="build.home"    value="${basedir}/build"/>
+ <property name="dist.home"     value="${basedir}/dist"/>
+
+ <property name="src.home"      							value="${basedir}/src"/>
+ <property name="web.home"      							value="${basedir}/WebRoot"/>
+ <property name="application.lib.home" value="${basedir}/lib"/>	
+
+ <property name="compile.debug"       value="false"/>
+ <property name="compile.deprecation" value="true"/>
+ <property name="compile.optimize"    value="true"/>
+	
+	<!-- Dont forget to set CATALINA_HOME in your environment variables -->
+ <property environment="env"/>
+ <property name="catalina.home" value="${env.CATALINA_HOME}"/>
+ 	
+	<!-- Set the operating systems tests -->
+	<condition property="isMac">
+		<os family="mac"/>
+	</condition>
+	
+	<condition property="isWindows">
+		<os family="windows"/>
+	</condition>
+	
+	<condition property="isUnix">
+		<os family="unix"/>
+	</condition>		
+		
+ <!-- Classpath --> 
+ <path id="compile.classpath">
+  	
+ 	<!-- Tomcat Libraries -->
+  <fileset dir="${catalina.home}/lib">
+   <include name="*.jar"/>
+  </fileset>
+
+ 	<!-- Application Libraries -->
+  <fileset dir="${application.lib.home}">
+   <include name="*.jar"/>
+  </fileset>
+ </path>
+
+	<!-- Clean -->
+ <target name="clean" description="Delete old build and dist directories">
+   <delete dir="${build.home}"/>
+   <delete dir="${dist.home}"/>
+ </target>
+	
+	<!-- -->
+	<target name="doMac" if="isMac">
+ 	<echo message="Copying deployemnt descriptor for macosx "/>
+  <copy file='${web.home}/WEB-INF/web.linux.xml' tofile='${catalina.home}/webapps/${app.name}/WEB-INF/web.xml' overwrite='true'/>	
+ </target>
+	
+	<target name="doWindows" if="isWindows">
+ 	<echo message="Copying deployemnt descriptor for windows "/>
+  <copy file='${web.home}/WEB-INF/web.windows.xml' tofile='${catalina.home}/webapps/${app.name}/WEB-INF/web.xml' overwrite='true'/>	
+ </target>
+	
+	<target name="doUnix" if="isUnix">
+	 <echo message="Copying deployemnt descriptor for unix "/>
+	 <copy file='${web.home}/WEB-INF/web.linux.xml' tofile='${catalina.home}/webapps/${app.name}/WEB-INF/web.xml' overwrite='true'/>	
+ </target>
+	
+	<!-- Copy appropriate web.xml based on platform service will be running on (for when running tomcat in eclipse)-->
+	<target name="tomcat_xml" depends="doMac, doWindows, doUnix">
+	 <echo message="Running OS Tests for deployment"/>
+	</target>
+		
+	 <!-- Set up -->
+ <target name="prepare" depends="tomcat_xml">
+	
+	 <!-- Create build directories as needed -->
+	 <mkdir dir="${build.home}"/>
+	 <mkdir dir="${build.home}/WEB-INF"/>
+	 <mkdir dir="${build.home}/WEB-INF/lib"/>
+	 <mkdir dir="${build.home}/WEB-INF/classes"/>
+		
+	 <!-- Copy static content, jsps and web.xml  of this web application -->
+	 <copy todir="${build.home}">
+	  <fileset dir="${web.home}"/>
+	 </copy>
+ 	 	
+	 <!-- copy application libraries to WEB-INF/lib folder --> 	
+		<!--<copy todir="${build.home}/WEB-INF/lib">    
+			<fileset dir="${application.lib.home}" includes="*.jar"/>
+		</copy>-->
+	</target>
+
+ <!-- Copy FuzeIn Service requirements -->	
+	<target name="fuzein_requirements" description="Copy fuzein service requirements">
+	 <copy file='../FuzeInConstants/jar/FuzeInConstants-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/FuzeInConstants-1.0.0.jar' overwrite='false'/>			
+		<copy file='../FuzeInService/jar/FuzeInService-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/FuzeInService-1.0.0.jar' overwrite='false'/>			
+	 <copy file='../FuzeInCommunication/jar/FuzeInCommunication-1.0.0.jar' tofile='./WebRoot/WEB-INF/lib/FuzeInCommunication-1.0.0.jar' overwrite='false'/>			
+	</target>
+	 	
+ <!-- Build -->
+ <target name="compile" depends="fuzein_requirements,build_dependencies,prepare" description="Compile Java sources">
+	 <!-- Compile Java classes as necessary -->
+	 <mkdir dir="${build.home}/WEB-INF/classes"/>
+	 <javac srcdir="${src.home}"
+	        destdir="${build.home}/WEB-INF/classes"
+	        debug="${compile.debug}"
+	        deprecation="${compile.deprecation}"
+	        optimize="${compile.optimize}" 
+	   	    includeantruntime="false">
+	  <classpath refid="compile.classpath"/>
+	 </javac>
+
+	 <!-- Copy application resources -->
+	 <copy todir="${build.home}/WEB-INF/classes">
+	  <fileset dir="${src.home}" excludes="**/*.java"/>
+	 </copy>
+ </target>
+
+ <!-- Create application JAR/WAR file -->
+	<target name="dist" depends="compile" description="Create binary distribution">
+ 	<mkdir dir="${dist.home}"/>
+  <jar jarfile="${dist.home}/${app.name}.war" basedir="${build.home}"/>
+ </target>
+
+	<!-- entry points -->
+	<target name="all" depends="clean,dist" description="Clean build and dist directories, then compile">
+		<echo>Finished building ${app.name} Web Front End</echo>
+	</target>
+			
+	<target name="deploy" depends="all" description="Clean build and dist directories compile and deploy to tomcat">
+		<copy file='${dist.home}/${app.name}.war' tofile='${catalina.home}/webapps/${app.name}.war' overwrite='true'/>	
+		<echo>Finished deployment to tomcat</echo>
+	</target>
+
+	<target name="clean-up" depends="clean" description="Clean build and dist directories">
+		<echo>Finished cleaning dist and build directories.</echo>
+	</target> 
+
+	<target name="eclipse-build" depends="compile" description="Compile">
+		<echo>Finished cleaning dist and build directories.</echo>
+	</target>
+
+</project>

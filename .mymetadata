@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="TerminologyManagementService"
+  id="myeclipse.1274443631487"
+  context-root="/TerminologyManagementService"
+  j2ee-spec="6.0"
+  archive="TerminologyManagementService.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

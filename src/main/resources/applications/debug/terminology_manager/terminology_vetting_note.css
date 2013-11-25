@@ -1,0 +1,18 @@
+/*
+*
+*/
+.fuzein_terminology_vetting_note_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/gnome-sticky-notes-applet.png) !important
+}
+
+.regular_text
+{
+ font:normal 16px "sans serif", verdana;
+ color:#444444;
+ padding-left: 3px;
+ padding-bottom:0px;
+ margin: 1px;
+ font-weight:normal;
+ cursor:text;
+ -moz-user-select:text;
+}

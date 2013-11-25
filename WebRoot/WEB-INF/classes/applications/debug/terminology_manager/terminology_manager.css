@@ -1,0 +1,29 @@
+/*
+* Logo
+*/
+.fuzein_terminology_mgmt_16 {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/fuzein_application-tdg-terminology.png) !important
+}
+
+/*
+*
+*/
+.fuzein_terminology_tab_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/fuzein_application-tdg-terminology.png) !important
+}
+
+.fuzein_shared_terminology_tab_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/shared-terminology.png) !important
+}
+
+.fuzein_language_tab_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/locale.png) !important
+}
+
+.fuzein_subject_tab_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/applications-office.png) !important
+}
+
+.fuzein_type_tab_icon {
+ background-image: url(/terminology_mgmt_service/css/images/terminology_manager/16/preferences-desktop-icons.png) !important
+}

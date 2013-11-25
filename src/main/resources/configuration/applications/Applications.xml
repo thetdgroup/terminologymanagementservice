@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<applications>
+ <application application_id="2d65335a2f4138613864287938785361" 
+              application_start="FuzeIn.TerminologyManager"
+              debug="true" 
+              application_display_name="FuzeIn Terminology Manager" 
+              icon_16="/terminology_mgmt_service/css/images/terminology_manager/16/fuzein_application-tdg-terminology.png" 
+              icon_32="/terminology_mgmt_service/css/images/terminology_manager/32/fuzein_application-tdg-terminology.png"  
+              icon_48="/terminology_mgmt_service/css/images/terminology_manager/48/fuzein_application-tdg-terminology.png" 
+              type="application" 
+              fuzein_mimetype="fuzein_application/tdg-terminology"
+              hierarchy="The TDGroup" 
+              single_instance="true"
+              task_shortcut="true" 
+              menu_shortcut="false" 
+              desktop_shortcut="true" 
+              desktop_context_shortcut="false" 
+              modal="false" 
+              admin="false" 
+              version="1.0">
+              
+  <module os_name="Ian" enabled="true">
+   <source_modules>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/search_form.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_template_form.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_share_form.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_publishing_form.js</module_file_name>
+
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/language_panel.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/domain_panel.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/type_panel.js</module_file_name>
+
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_lemma.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_vetting_note.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_sense.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_image.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_audio.js</module_file_name>
+    <module_file_name version="1.0" main="false">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_video.js</module_file_name>
+   
+    <module_file_name version="1.0" main="true">WEB-INF/classes/applications/debug/terminology_manager/terminology_manager.js</module_file_name>
+   </source_modules>
+   <css_modules>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/search_form.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_template_form.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_share_form.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_publishing_form.css</module_file_name>
+
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_toolbar.css</module_file_name>
+    
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_lemma.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_vetting_note.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_sense.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_image.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_audio.css</module_file_name>
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_unit_video.css</module_file_name>
+
+    <module_file_name theme_name="" version="1.0">WEB-INF/classes/applications/debug/terminology_manager/terminology_manager.css</module_file_name>
+    
+   </css_modules>
+  </module>
+ 
+  <!-- Define the MIME types this application supports --> 
+  <!-- Dont forget to copy the application icon in the content viewer application
+       if you want to display it in the FuzeIn Explorer as the associated
+       icon for this mime type -->
+  <supported_mimetypes>
+   <mimetype default="true" type="fuzein_application/tdg-terminology"/>
+  </supported_mimetypes>
+ </application>
+ 
+</applications>
