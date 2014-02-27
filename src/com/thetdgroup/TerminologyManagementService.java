@@ -291,7 +291,7 @@ public final class TerminologyManagementService extends FuzeInService
 		JSONObject jsonObject = new JSONObject();
 		
 		//
-		JSONObject jsonUserInformation = getUserInformation(identificationKey);
+		JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 		
 		//
 		// Get the user's repository information from the ContentManagement Service
@@ -369,7 +369,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -416,7 +416,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -589,7 +589,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -651,7 +651,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -708,7 +708,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -753,7 +753,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -799,7 +799,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -847,7 +847,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -894,7 +894,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
@@ -940,7 +940,7 @@ public final class TerminologyManagementService extends FuzeInService
 
 			try
 			{
-				JSONObject jsonUserInformation = getUserInformation(identificationKey);
+				JSONObject jsonUserInformation = getSessionUserInformation(identificationKey);
 				
 				//
 				// Prepare Terminology Package
