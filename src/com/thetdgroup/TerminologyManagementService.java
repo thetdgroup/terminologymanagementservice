@@ -467,7 +467,7 @@ public final class TerminologyManagementService extends FuzeInService
 		JSONObject jsonResponse = processServiceResponse(serviceResponse);
 		
 		//
-		JSONObject jsonAdapterResults = jsonResponse.getJSONObject(AdapterConstants.ADAPTER_DATA).getJSONObject(AdapterConstants.ADAPTER_RESULTS);
+		JSONObject jsonAdapterResults = jsonResponse.getJSONObject(AdapterConstants.ADAPTER_DATA).getJSONObject(AdapterConstants.ADAPTER_DATA);
 		
 		//
 		JSONArray jsonLanguages = new JSONArray();
