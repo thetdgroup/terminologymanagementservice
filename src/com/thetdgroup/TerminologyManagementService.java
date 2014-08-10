@@ -39,8 +39,23 @@ public final class TerminologyManagementService extends FuzeInService
 	//
 	public void InitializeService() throws Exception
 	{
-		logger = new ServiceLogger("TERMINOLOGY_MANAGEMENT_SERVICE");
-		
+	 // Logging initialization
+  String prefix = getServletContext().getRealPath("/");
+  String log4jConfigFileName = getInitParameter("ITAService-log4j-init-file");
+ 
+  // Set up Logger
+  logger = new ServiceLogger("TERMINOLOGY_MANAGEMENT_SERVICE");
+  
+  if(log4jConfigFileName != null)
+  {
+   logger.setLog4jConfigurationLocation(new StringBuilder(prefix).append("/").append(log4jConfigFileName).toString());
+   logger.setLoggerName("TERMINOLOGY_MANAGEMENT_SERVICE");
+   logger.init();
+  }
+    
+  logger.logEvent(ServiceLogConstants.EVENT_TYPE_SERVICE_INIT, "Starting " + this.getServletName());
+
+	 //	
 		FuzeInService.serviceSignature = "3b5c4c3d34693b51306a277139742d4174795148676e652733734d2739";
 		
 		FuzeInService.adapterConfiguration = getInitParameter("AdapterConfiguration");

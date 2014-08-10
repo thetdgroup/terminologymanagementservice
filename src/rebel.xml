@@ -2,17 +2,17 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
 	<classpath>
-		<dir name="/Users/ericdamphousse/Workspaces/MyEclipse 9/TerminologyManagementService/WebRoot/WEB-INF/classes">
+		<dir name="${rebel.workspace.path}/TerminologyManagementService/WebRoot/WEB-INF/classes">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="/Users/ericdamphousse/Workspaces/MyEclipse 9/TerminologyManagementService/target/m2e-jee/web-resources">
+			<dir name="${rebel.workspace.path}/TerminologyManagementService/target/m2e-jee/web-resources">
 			</dir>
 		</link>
 		<link target="/">
-			<dir name="/Users/ericdamphousse/Workspaces/MyEclipse 9/TerminologyManagementService/WebRoot">
+			<dir name="${rebel.workspace.path}/TerminologyManagementService/WebRoot">
 				<exclude name="/"/>
 			</dir>
 		</link>
